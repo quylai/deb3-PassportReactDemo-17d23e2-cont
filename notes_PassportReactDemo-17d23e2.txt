@@ -28,6 +28,22 @@ OBSERVATION
 --------------------
 
 //=================================================================================
+MODIFIED
+
+- this would allow you to put your own secret-string
+  in strategies\jwt.js
+  change
+      'secretOrKey': 'your_jwt_secret'
+  to
+      'secretOrKey': process.env.JWTSECRET
+  then at root directory, created file ".env" with content
+      JWTSECRET="secret-string"
+  "secret-string" is arbitrary
+  (dont put tab in front of JWTSECRET when placed in .env)
+
+--------------------
+
+//=================================================================================
 CERTAIN
 
 
