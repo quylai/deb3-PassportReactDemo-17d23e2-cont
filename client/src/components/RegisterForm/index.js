@@ -12,7 +12,6 @@ class RegisterForm extends Component {
 				first_name: '',
 				last_name: ''
 			}
-	
     }
 
     loginSubmit = (event) => {
@@ -26,7 +25,10 @@ class RegisterForm extends Component {
         });
         axios.post('/api/users', {
             'username': this.state.username,
-            'password': this.state.password
+						'password': this.state.password,
+						'email': this.state.email,
+						'first_name': this.state.first_name,
+						'last_name': this.state.last_name
         }).then((response) => {
             console.log(response);  //t
         });

@@ -39,6 +39,7 @@ export default function (app) {
     });
 
     app.post('/api/users', (request, response) => {
+        console.log("inside auth.js /api/users");  //t
         const body = request.body;
         models.user.create({
             username: body.username,
