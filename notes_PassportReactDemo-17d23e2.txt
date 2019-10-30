@@ -57,7 +57,7 @@ MODIFIED
 
 --------------------
 
-- in routes\auth.js
+- in routes\auth.js, the block of code is not in-used, therefore not needed;
 
 			app.post('/api/users', (request, response) => {
 					const body = request.body;
@@ -72,8 +72,7 @@ MODIFIED
 					})
 			});
 
-	that block may somehow tied to the authentication scheme, therefore creates a
-	new route, something like
+	only the block below is being use in routes\auth.js
 
 			import models from '../models';
 			export default function (app) {
@@ -94,9 +93,6 @@ MODIFIED
 					})
 				});
 			}
-
-	so at the time when doing a http-post, call to 
-			/api/testUserSignup
 
 ----
 

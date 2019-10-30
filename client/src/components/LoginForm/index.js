@@ -25,6 +25,7 @@ class LoginForm extends Component {
             'username': this.state.username,
             'password': this.state.password
         }).then((response) => {
+            console.log("responses");  //t
             this.cookies.set('token', response.data.token);
         });
     }

@@ -2,8 +2,6 @@ import models from '../models';
 export default function (app) {
   app.post('/api/testUserSignup', (request, response) => {
     const body = request.body;
-    console.log("inside newUser.js");
-    console.log(body);  //t
     models.User.create({
       username: body.username,
       password: body.password,
@@ -14,10 +12,8 @@ export default function (app) {
     }).then(() => {
       response.send();
 
-		}).catch((error) => {
-      console.log("----error in routes/newUser.js");
-      console.log(error);
-      
+		}).catch((error) => { 
+      console.log(error);     
     })
   });
 }
