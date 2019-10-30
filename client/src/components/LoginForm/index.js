@@ -4,15 +4,15 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 
 class LoginForm extends Component {
-    state = {
-        username: '',
-        password: ''
-    }
 
     cookies = new Cookies();
 
     constructor(props) {
         super(props);
+        this.state = {
+            username: '',
+            password: ''
+        }    
     }
 
     loginSubmit = (event) => {
