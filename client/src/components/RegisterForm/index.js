@@ -2,16 +2,17 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 class RegisterForm extends Component {
-    state = {
-        username: '',
-        password: '',
-        email: '',
-        first_name: '',
-        last_name: ''
-    }
 
     constructor(props) {
-        super(props);
+			super(props);
+			this.state = {
+				username: '',
+				password: '',
+				email: '',
+				first_name: '',
+				last_name: ''
+			}
+	
     }
 
     loginSubmit = (event) => {
