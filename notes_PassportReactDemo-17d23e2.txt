@@ -49,18 +49,18 @@ MODIFIED
 
 - in routes\auth.js
 
-    app.post('/api/users', (request, response) => {
-        const body = request.body;
-        models.user.create({
-            username: body.username,
-            password: body.password,
-            email: DataTypes.STRING,
-            first_name: DataTypes.STRING,
-            last_name: DataTypes.STRING,
-        }).then(() => {
-            response.send();
-        })
-    });
+			app.post('/api/users', (request, response) => {
+					const body = request.body;
+					models.user.create({
+							username: body.username,
+							password: body.password,
+							email: DataTypes.STRING,
+							first_name: DataTypes.STRING,
+							last_name: DataTypes.STRING,
+					}).then(() => {
+							response.send();
+					})
+			});
 
 	that block may somehow tied to the authentication scheme, therefore creates a
 	new route, something like
@@ -87,6 +87,27 @@ MODIFIED
 
 	so at the time when doing a http-post, call to 
 			/api/testUserSignup
+
+----
+
+- error in browser console:
+	Warning: A component is changing a controlled input of type text to be uncontrolled. Input elements should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled input element for the lifetime of the component.
+
+	resolution:
+	add
+			|| ''
+	to the tail-end inside {} of every element "input" attribute "value", so
+			value={this.state.password}
+	of
+			<div className="form-group">
+				<label htmlFor="password">Password</label>
+				<input type="password" className="form-control" name="password" 
+								id="password" onChange={this.handleChange}
+								value={this.state.password || ''}
+				/>
+			</div>
+	turns into
+			value={this.state.password || ''}
 
 //=================================================================================
 CERTAIN

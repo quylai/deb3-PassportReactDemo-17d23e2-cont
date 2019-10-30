@@ -49,7 +49,7 @@ class RegisterForm extends Component {
 									<label htmlFor="username">Username</label>
 									<input type="text" className="form-control" name="username" 
 													id="username" onChange={this.handleChange} 
-													value={this.state.username}
+													value={this.state.username || ''}
 									/>
 								</div>
 
@@ -57,7 +57,7 @@ class RegisterForm extends Component {
 									<label htmlFor="password">Password</label>
 									<input type="password" className="form-control" name="password" 
 													id="password" onChange={this.handleChange}
-													value={this.state.password}
+													value={this.state.password || ''}
 									/>
 								</div>
 
@@ -67,7 +67,7 @@ class RegisterForm extends Component {
 									<label htmlFor="email">Email</label>
 									<input type="text" className="form-control" name="email" 
 													id="email" onChange={this.handleChange} 
-													value={this.state.email}
+													value={this.state.email || ''}
 									/>
 								</div>
 
@@ -75,7 +75,7 @@ class RegisterForm extends Component {
 									<label htmlFor="first_name">First Name</label>
 									<input type="text" className="form-control" name="first_name" 
 													id="first_name" onChange={this.handleChange} 
-													value={this.state.first_name}
+													value={this.state.first_name || ''}
 									/>
 								</div>
 
@@ -83,7 +83,7 @@ class RegisterForm extends Component {
 									<label htmlFor="last_name">Last Name</label>
 									<input type="text" className="form-control" name="last_name" 
 													id="last_name" onChange={this.handleChange} 
-													value={this.state.last_name}
+													value={this.state.last_name || ''}
 									/>
 								</div>
 
