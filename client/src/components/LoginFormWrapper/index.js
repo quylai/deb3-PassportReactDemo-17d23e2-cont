@@ -1,3 +1,7 @@
+/*
+reason for this wrapper was to preserver how LoginForm comp. being called
+*/
+
 import React, { Component } from "react";
 import LoginForm from '../LoginForm';
 
