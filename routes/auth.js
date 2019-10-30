@@ -26,7 +26,7 @@ export default function (app) {
                     };
 
                     // generate a signed son web token with the contents of user object and return it in the response
-                    const token = jwt.sign(sanitizedUser, 'your_jwt_secret');
+                    const token = jwt.sign(sanitizedUser, process.env.JWTSECRET);
                     response.json(
                         {
                             user: sanitizedUser,

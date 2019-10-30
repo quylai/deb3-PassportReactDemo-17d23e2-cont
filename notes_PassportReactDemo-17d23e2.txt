@@ -30,7 +30,8 @@ OBSERVATION
 //=================================================================================
 MODIFIED
 
-- this would allow you to put your own secret-string
+* this would allow you to put your own secret-string
+
   in strategies\jwt.js
   add
       require('dotenv').config();
@@ -39,6 +40,15 @@ MODIFIED
       'secretOrKey': 'your_jwt_secret'
   to
       'secretOrKey': process.env.JWTSECRET
+
+	in routes\auth.js
+  add
+      require('dotenv').config();
+  on codes first line;
+  change
+			const token = jwt.sign(sanitizedUser, 'your_jwt_secret');
+	to
+			const token = jwt.sign(sanitizedUser, process.env.JWTSECRET);
 
   then at root directory, created file ".env" with content
       JWTSECRET="secret-string"
