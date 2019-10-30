@@ -23,7 +23,7 @@ class RegisterForm extends Component {
             "first_name": event.currentTarget.password,
             "last_name": event.currentTarget.password
         });
-        axios.post('/api/users', {
+        axios.post('/api/testUserSignup', {
             'username': this.state.username,
 						'password': this.state.password,
 						'email': this.state.email,

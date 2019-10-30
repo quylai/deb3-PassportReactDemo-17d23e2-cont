@@ -2,7 +2,7 @@ import passport from 'passport';
 import jwt from 'jsonwebtoken';
 import models from '../models';
 export default function (app) {
-    app.post('/api/auth', function(request, response) {
+     app.post('/api/auth', function(request, response) {
         passport.authenticate(
             'local',
             {session: false},
@@ -37,10 +37,8 @@ export default function (app) {
             }
         )(request, response);
     });
-
-    app.post('/api/users', (request, response) => {
-        console.log("inside auth.js /api/users");  //t
-        const body = request.body;
+     app.post('/api/users', (request, response) => {
+         const body = request.body;
         models.user.create({
             username: body.username,
             password: body.password,
@@ -50,5 +48,6 @@ export default function (app) {
         }).then(() => {
             response.send();
         })
-    });
+
+     });
 }
